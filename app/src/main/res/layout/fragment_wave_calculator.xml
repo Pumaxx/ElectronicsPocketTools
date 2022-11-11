@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".WaveCalculator">
+
+    <TextView
+        android:id="@+id/TvMainTitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Electromagnetic wave parameters"
+        android:textColor="@color/main"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--LengthFrequencyEnergy container-->
+    <LinearLayout
+        android:id="@+id/LlLengthFrequencyEnergy"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="@dimen/ContainerMarginInBetween"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlLengthFrequencyEnergyTitle"
+        android:layout_width="215dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toTopOf="@+id/LlLengthFrequencyEnergy" />
+
+    <TextView
+        android:id="@+id/TvLengthFrequencyEnergyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Length | Frequency | Energy"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toTopOf="@+id/LlLengthFrequencyEnergy" />
+
+    <!--LengthFrequencyEnergy container wave length-->
+    <TextView
+        android:id="@+id/TvLfeLengthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave length"
+        android:textColor="@color/containerMainText"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:layout_marginTop="@dimen/ContainerContentBeginMarginTop"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/LlLengthFrequencyEnergyTitle" />
+
+    <EditText
+        android:id="@+id/EtLfeLengthInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeLengthTitle" />
+
+    <Spinner
+        android:id="@+id/SpLfeLength"
+        android:entries="@array/lengths"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtLfeLengthInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeLengthTitle" />
+
+    <!--LengthFrequencyEnergy container wave frequency-->
+    <TextView
+        android:id="@+id/TvLfeFrequencyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave frequency"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/EtLfeLengthInput" />
+
+    <EditText
+        android:id="@+id/EtLfeFrequencyInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeFrequencyTitle" />
+
+    <Spinner
+        android:id="@+id/SpLfeFrequency"
+        android:entries="@array/frequencies"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtLfeFrequencyInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeFrequencyTitle" />
+
+    <!--LengthFrequencyEnergy container wave energy-->
+    <TextView
+        android:id="@+id/TvLfeEnergyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave energy"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/EtLfeFrequencyInput" />
+
+    <EditText
+        android:id="@+id/EtLfeEnergyInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeEnergyTitle" />
+
+    <Spinner
+        android:id="@+id/SpLfeEnergy"
+        android:entries="@array/energies"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtLfeEnergyInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvLfeEnergyTitle" />
+
+    <!--Speed container-->
+    <LinearLayout
+        android:id="@+id/LlSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="@dimen/ContainerMarginInBetween"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlPeriod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlSpeedTitle"
+        android:layout_width="@dimen/ContainerTitleSmallBackgroundWidth"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toTopOf="@+id/LlSpeed" />
+
+    <TextView
+        android:id="@+id/TvSpeedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toTopOf="@+id/LlSpeed" />
+
+    <!--Speed container wave length-->
+    <TextView
+        android:id="@+id/TvSpeedLengthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave length"
+        android:textColor="@color/containerMainText"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:layout_marginTop="@dimen/ContainerContentBeginMarginTop"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/LlSpeedTitle" />
+
+    <EditText
+        android:id="@+id/EtSpeedLengthInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedLengthTitle" />
+
+    <Spinner
+        android:id="@+id/SpSpeedLength"
+        android:entries="@array/lengths"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtSpeedLengthInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedLengthTitle" />
+
+    <!--Speed container wave frequency-->
+    <TextView
+        android:id="@+id/TvSpeedFrequencyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave frequency"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/EtSpeedLengthInput" />
+
+    <EditText
+        android:id="@+id/EtSpeedFrequencyInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedFrequencyTitle" />
+
+    <Spinner
+        android:id="@+id/SpSpeedFrequency"
+        android:entries="@array/frequencies"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtSpeedFrequencyInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedFrequencyTitle" />
+
+    <!--Speed container wave result-->
+    <TextView
+        android:id="@+id/TvSpeedResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/EtSpeedFrequencyInput" />
+
+    <EditText
+        android:id="@+id/EtSpeedResultInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedResultTitle" />
+
+    <Spinner
+        android:id="@+id/SpSpeedResult"
+        android:entries="@array/speeds"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtSpeedResultInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvSpeedResultTitle" />
+
+    <!--Period container-->
+    <LinearLayout
+        android:id="@+id/LlPeriod"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlPeriodTitle"
+        android:layout_width="@dimen/ContainerTitleSmallBackgroundWidth"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlPeriod"
+        app:layout_constraintTop_toTopOf="@+id/LlPeriod" />
+
+    <TextView
+        android:id="@+id/TvPeriodTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Period"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPeriod"
+        app:layout_constraintTop_toTopOf="@+id/LlPeriod" />
+
+    <!--Period container wave frequency-->
+    <TextView
+        android:id="@+id/TvPeriodFrequencyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wave frequency"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerContentBeginMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/LlPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/LlPeriodTitle" />
+
+    <EditText
+        android:id="@+id/EtPeriodFrequencyInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/TvPeriodFrequencyTitle" />
+
+    <Spinner
+        android:id="@+id/SpPeriodFrequency"
+        android:entries="@array/frequencies"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtPeriodFrequencyInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvPeriodFrequencyTitle" />
+
+    <!--Period container wave result-->
+    <TextView
+        android:id="@+id/TvPeriodResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/EtPeriodFrequencyInput" />
+
+    <EditText
+        android:id="@+id/EtPeriodResultInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlLengthFrequencyEnergy"
+        app:layout_constraintTop_toBottomOf="@+id/TvPeriodResultTitle" />
+
+    <Spinner
+        android:id="@+id/SpPeriodResult"
+        android:spinnerMode="dialog"
+        android:entries="@array/periods"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtPeriodResultInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvPeriodResultTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

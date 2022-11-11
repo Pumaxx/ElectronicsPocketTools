@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">ElectronicsPocketTools</string>
+
+    <string-array name="lengths">
+        <item>nm</item>
+        <item>μm</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+    </string-array>
+
+    <string-array name="frequencies">
+        <item>nHz</item>
+        <item>μHz</item>
+        <item>mHz</item>
+        <item>Hz</item>
+        <item>kHz</item>
+        <item>MHz</item>
+        <item>GHz</item>
+        <item>THz</item>
+    </string-array>
+
+    <string-array name="energies">
+        <item>neV</item>
+        <item>μeV</item>
+        <item>meV</item>
+        <item>eV</item>
+        <item>keV</item>
+        <item>MeV</item>
+    </string-array>
+
+    <string-array name="speeds">
+        <item>cm/s</item>
+        <item>m/s</item>
+        <item>km/h</item>
+    </string-array>
+
+    <string-array name="periods">
+        <item>ns</item>
+        <item>μs</item>
+        <item>ms</item>
+        <item>s</item>
+    </string-array>
+
+</resources>

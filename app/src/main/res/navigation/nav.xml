@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainMenu">
+
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.example.electronicspockettools.MainMenu"
+        android:label="Electronics Pocket Tools"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_resistorRecognition2"
+            app:destination="@id/resistorRecognition" />
+        <action
+            android:id="@+id/action_mainMenu_to_waveCalculator2"
+            app:destination="@id/waveCalculator" />
+        <action
+            android:id="@+id/action_mainMenu_to_logicGates2"
+            app:destination="@id/logicGates" />
+        <action
+            android:id="@+id/action_mainMenu_to_digitalFilters2"
+            app:destination="@id/digitalFilters" />
+        <action
+            android:id="@+id/action_mainMenu_to_preferredValues2"
+            app:destination="@id/preferredValues" />
+        <action
+            android:id="@+id/action_mainMenu_to_amplificationSuppression2"
+            app:destination="@id/amplificationSuppression" />
+    </fragment>
+    <fragment
+        android:id="@+id/resistorRecognition"
+        android:name="com.example.electronicspockettools.ResistorRecognition"
+        android:label="Resistor recognition"
+        tools:layout="@layout/fragment_resistor_recognition" >
+        <action
+            android:id="@+id/action_resistorRecognition_to_mainMenu2"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/waveCalculator"
+        android:name="com.example.electronicspockettools.WaveCalculator"
+        android:label="Wave calculator"
+        tools:layout="@layout/fragment_wave_calculator" >
+        <action
+            android:id="@+id/action_waveCalculator_to_mainMenu2"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/logicGates"
+        android:name="com.example.electronicspockettools.LogicGates"
+        android:label="Logic gates"
+        tools:layout="@layout/fragment_logic_gates" >
+        <action
+            android:id="@+id/action_logicGates_to_mainMenu2"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/digitalFilters"
+        android:name="com.example.electronicspockettools.DigitalFilters"
+        android:label="Digital filters"
+        tools:layout="@layout/fragment_digital_filters" >
+        <action
+            android:id="@+id/action_digitalFilters_to_mainMenu"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/preferredValues"
+        android:name="com.example.electronicspockettools.PreferredValues"
+        android:label="Preferred values"
+        tools:layout="@layout/fragment_preferred_values" >
+        <action
+            android:id="@+id/action_preferredValues_to_mainMenu"
+            app:destination="@id/mainMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/amplificationSuppression"
+        android:name="com.example.electronicspockettools.AmplificationSuppression"
+        android:label="Amplification Suppression"
+        tools:layout="@layout/fragment_amplification_suppression" >
+        <action
+            android:id="@+id/action_amplificationSuppression_to_mainMenu2"
+            app:destination="@id/mainMenu" />
+    </fragment>
+</navigation>
