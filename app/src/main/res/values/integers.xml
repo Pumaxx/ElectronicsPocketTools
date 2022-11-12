@@ -16,6 +16,7 @@
         <dimen name="ContainerMarginInBetween">15dp</dimen>
 
     <!--WidthsAndHeights-->
+        <dimen name="ContainerMainTitleWidth">300dp</dimen>
         <dimen name="ContainerEditTextWidth">270dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundWidth">75dp</dimen>
         <dimen name="ContainerSpinnerWidth">80dp</dimen>
@@ -23,8 +24,10 @@
         <dimen name="ContainerEditTextHeight">35dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundHeight">30dp</dimen>
         <dimen name="ContainerSpinnerHeight">38dp</dimen>
+        <dimen name="ContainerAmpSuppHeight">295dp</dimen>
 
     <!--TextSizes-->
+        <dimen name="ContainerMainTitleTextSize">25sp</dimen>
         <dimen name="ContainerTitleTextSize">16sp</dimen>
         <dimen name="ContainerMainTextSize">14sp</dimen>
 

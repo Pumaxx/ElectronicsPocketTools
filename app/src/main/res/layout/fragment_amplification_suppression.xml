@@ -7,16 +7,403 @@
     tools:context=".AmplificationSuppression">
 
     <TextView
-        android:id="@+id/TvAmplificationSuppressionTitle"
+        android:id="@+id/TvMainTitle"
+        android:layout_width="@dimen/ContainerMainTitleWidth"
+        android:layout_height="wrap_content"
+        android:text="Amplification and Suppression calculator"
+        android:textColor="@color/main"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/LlVoltCurr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--Voltage/Current container-->
+    <LinearLayout
+        android:id="@+id/LlVoltCurr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ContainerAmpSuppHeight"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="@dimen/ContainerMarginInBetween"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlPower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlVoltCurrTitle"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toTopOf="@+id/LlVoltCurr" />
+
+    <TextView
+        android:id="@+id/TvVoltCurrTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Amplification Suppression"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="34sp"
+        android:text="Voltage / Current"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toTopOf="@+id/LlVoltCurr" />
+
+    <!--Voltage/Current container input-->
+    <TextView
+        android:id="@+id/TvVoltCurrInputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input"
+        android:textColor="@color/containerMainText"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:layout_marginTop="@dimen/ContainerContentBeginMarginTop"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/LlVoltCurrTitle" />
+
+    <EditText
+        android:id="@+id/EtVoltCurrInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrInputTitle" />
+
+    <TextView
+        android:id="@+id/TvVoltCurrInputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V or A"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtVoltCurrInput"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtVoltCurrInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrInputTitle" />
+
+    <!--Voltage/Current container output-->
+    <TextView
+        android:id="@+id/TvVoltCurrOutputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Output"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/EtVoltCurrInput" />
+
+    <EditText
+        android:id="@+id/EtVoltCurrOutput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrOutputTitle" />
+
+    <TextView
+        android:id="@+id/TvVoltCurrOutputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V or A"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtVoltCurrOutput"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtVoltCurrOutput"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrOutputTitle" />
+
+    <!--Voltage/Current container dimensionless result-->
+    <TextView
+        android:id="@+id/TvVoltCurrDimLessTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dimensionless result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/EtVoltCurrOutput" />
+
+    <EditText
+        android:id="@+id/EtVoltCurrDimLess"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrDimLessTitle" />
+
+    <TextView
+        android:id="@+id/TvVoltCurrDimLessUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V/V or A/A"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtVoltCurrDimLess"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtVoltCurrDimLess"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrDimLessTitle" />
+
+    <!--Voltage/Current container db result-->
+    <TextView
+        android:id="@+id/TvVoltCurrDbTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dB result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/EtVoltCurrDimLess" />
+
+    <EditText
+        android:id="@+id/EtVoltCurrDb"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlVoltCurr"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrDbTitle" />
+
+    <TextView
+        android:id="@+id/TvVoltCurrDbUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dB"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtVoltCurrDb"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtVoltCurrDb"
+        app:layout_constraintTop_toBottomOf="@+id/TvVoltCurrDbTitle" />
+
+    <!--Power container-->
+    <LinearLayout
+        android:id="@+id/LlPower"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ContainerAmpSuppHeight"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlPowerTitle"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toTopOf="@+id/LlPower" />
+
+    <TextView
+        android:id="@+id/TvPowerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toTopOf="@+id/LlPower" />
+
+    <!--Power container input-->
+    <TextView
+        android:id="@+id/TvPowerInputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input"
+        android:textColor="@color/containerMainText"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:layout_marginTop="@dimen/ContainerContentBeginMarginTop"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerTitle" />
+
+    <EditText
+        android:id="@+id/EtPowerInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerInputTitle" />
+
+    <TextView
+        android:id="@+id/TvPowerInputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="W"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtPowerInput"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtPowerInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerInputTitle" />
+
+    <!--Power container output-->
+    <TextView
+        android:id="@+id/TvPowerOutputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Output"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/EtPowerInput" />
+
+    <EditText
+        android:id="@+id/EtPowerOutput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerOutputTitle" />
+
+    <TextView
+        android:id="@+id/TvPowerOutputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="W"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtPowerOutput"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtPowerOutput"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerOutputTitle" />
+
+    <!--Power container dimensionless result-->
+    <TextView
+        android:id="@+id/TvPowerDimLessTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dimensionless result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/EtPowerOutput" />
+
+    <EditText
+        android:id="@+id/EtPowerDimLess"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerDimLessTitle" />
+
+    <TextView
+        android:id="@+id/TvPowerDimLessUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="W/W"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtPowerDimLess"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtPowerDimLess"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerDimLessTitle" />
+
+    <!--Power container db result-->
+    <TextView
+        android:id="@+id/TvPowerDbTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dB result"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerMainTextMarginTopFromEditText"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/EtPowerDimLess" />
+
+    <EditText
+        android:id="@+id/EtPowerDb"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:inputType="numberDecimal"
+        android:enabled="false"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlPower"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerDbTitle" />
+
+    <TextView
+        android:id="@+id/TvPowerDbUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dB"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/EtPowerDb"
+        app:layout_constraintEnd_toEndOf="@+id/LlVoltCurr"
+        app:layout_constraintStart_toEndOf="@+id/EtPowerDb"
+        app:layout_constraintTop_toBottomOf="@+id/TvPowerDbTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

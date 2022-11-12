@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/TvMainTitle"
-        android:layout_width="300dp"
+        android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
         android:text="Electromagnetic wave parameters"
         android:textColor="@color/main"
-        android:textSize="25sp"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginBottom="25dp"
