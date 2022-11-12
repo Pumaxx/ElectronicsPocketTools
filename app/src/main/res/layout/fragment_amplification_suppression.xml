@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AmplificationSuppression">
+    tools:context=".AmplificationSuppression"
+    android:background="@color/backgroundFragment">
 
     <TextView
         android:id="@+id/TvMainTitle"
         android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
         android:text="Amplification and Suppression calculator"
-        android:textColor="@color/main"
+        android:textColor="@color/containerMainText"
         android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
         android:gravity="center"

@@ -8,9 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="main">#265c98</color>
-    <color name="secondary">#e9eff5</color>
-    <color name="containerTitles">#FFFFFFFF</color>
-    <color name="containerMainText">#FF000000</color>
-    <color name="containerResult">#538922</color>
+    <color name="main">#292929</color>
+    <color name="secondary">#666666</color>
+    <color name="containerTitles">#eeeeee</color>
+    <color name="containerMainText">#eeeeee</color>
+    <color name="containerResult">#2BAF6C</color>
+    <color name="backgroundFragment">#404040</color>
+
 </resources>

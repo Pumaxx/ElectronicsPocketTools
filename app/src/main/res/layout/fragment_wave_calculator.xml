@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".WaveCalculator">
+    tools:context=".WaveCalculator"
+    android:background="#404040">
 
     <TextView
         android:id="@+id/TvMainTitle"
         android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
         android:text="Electromagnetic wave parameters"
-        android:textColor="@color/main"
+        android:textColor="@color/containerMainText"
         android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
         android:gravity="center"
