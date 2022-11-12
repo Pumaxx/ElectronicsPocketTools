@@ -14,6 +14,7 @@
     <color name="containerMainText">#eeeeee</color>
     <color name="containerMainInput">#d6d6d6</color>
     <color name="containerResult">#2BAF6C</color>
+    <color name="containerResultOutput">#40b77b</color>
     <color name="buttonColor">#228c56</color>
     <color name="backgroundFragment">#404040</color>
 
