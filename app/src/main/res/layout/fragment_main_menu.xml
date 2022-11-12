@@ -5,33 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainMenu"
-    android:background="@color/backgroundFragment">
+    android:background="#292929">
+
+    <TextView
+        android:id="@+id/TvMainTitle"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Electronics Pocket Tools"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/BtResistorRecognition"
         android:layout_width="170dp"
         android:layout_height="170dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/buttonColor"
         android:text="Resistor"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TvMainTitle" />
 
     <Button
         android:id="@+id/BtWaveCalculator"
         android:layout_width="170dp"
         android:layout_height="170dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/buttonColor"
         android:text="Wave"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TvMainTitle" />
 
     <Button
         android:id="@+id/BtLogicGates"
@@ -42,6 +58,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toTopOf="@+id/BtPreferredValues"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BtResistorRecognition" />
@@ -55,6 +72,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginRight="20dp"
+        android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toTopOf="@+id/BtAmplificationSuppression"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BtWaveCalculator" />
@@ -67,8 +85,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -80,8 +99,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         android:layout_marginRight="20dp"
+        android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
