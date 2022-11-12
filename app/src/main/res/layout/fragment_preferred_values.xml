@@ -4,19 +4,457 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PreferredValues">
+    tools:context=".PreferredValues"
+    android:background="@color/backgroundFragment">
 
     <TextView
-        android:id="@+id/TvPreferredValuesTitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/TvMainTitle"
+        android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
-        android:text="Preferred Values"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="40sp"
+        android:text="Preferred Values Calculator"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/LlPrefValues"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--Main container-->
+    <LinearLayout
+        android:id="@+id/LlPrefValues"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlLlPrefValuesIdealTitle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlPrefValues"
+        app:layout_constraintTop_toTopOf="@+id/LlPrefValues" />
+
+    <TextView
+        android:id="@+id/TvLlPrefValuesIdealTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Ideal Value"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LlLlPrefValuesIdealTitle"
+        app:layout_constraintStart_toStartOf="@+id/LlLlPrefValuesIdealTitle"
+        app:layout_constraintTop_toTopOf="@+id/LlLlPrefValuesIdealTitle" />
+
+    <EditText
+        android:id="@+id/EtLlPrefValuesIdeal"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textColor="@color/containerMainInput"
+        android:inputType="numberDecimal"
+        android:backgroundTint="@color/containerMainText"
+        app:layout_constraintBottom_toBottomOf="@+id/LlLlPrefValuesIdealTitle"
+        app:layout_constraintStart_toEndOf="@+id/TvLlPrefValuesIdealTitle"
+        app:layout_constraintTop_toTopOf="@+id/LlPrefValues" />
+
+    <TextView
+        android:id="@+id/TvLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Series    |    Value    |    Error Val    |    Error %"
+        android:textColor="@color/main"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlPrefValues"
+        app:layout_constraintStart_toStartOf="@+id/LlPrefValues"
+        app:layout_constraintTop_toBottomOf="@+id/LlLlPrefValuesIdealTitle" />
+
+    <!--Labels-->
+    <TextView
+        android:id="@+id/TvE3"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E3"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabels" />
+
+    <TextView
+        android:id="@+id/TvE6"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E6"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE3" />
+
+    <TextView
+        android:id="@+id/TvE12"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E12"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE6" />
+
+    <TextView
+        android:id="@+id/TvE24"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E24"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE12" />\
+
+
+    <TextView
+        android:id="@+id/TvE48"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E48"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE24" />
+
+    <TextView
+        android:id="@+id/TvE96"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E96"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE48" />
+
+    <TextView
+        android:id="@+id/TvE192"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:text="E192"
+        android:textColor="@color/containerResult"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        app:layout_constraintStart_toStartOf="@+id/TvLabels"
+        app:layout_constraintTop_toBottomOf="@+id/TvE96" />
+
+    <!--Values-->
+    <TextView
+        android:id="@+id/TvE3Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE3"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabels" />
+
+    <TextView
+        android:id="@+id/TvE6Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE6"
+        app:layout_constraintTop_toBottomOf="@+id/TvE3Value" />
+
+    <TextView
+        android:id="@+id/TvE12Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE12"
+        app:layout_constraintTop_toBottomOf="@+id/TvE6Value" />
+
+    <TextView
+        android:id="@+id/TvE24Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE24"
+        app:layout_constraintTop_toBottomOf="@+id/TvE12Value" />\
+
+    <TextView
+        android:id="@+id/TvE48Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE48"
+        app:layout_constraintTop_toBottomOf="@+id/TvE24Value" />
+
+    <TextView
+        android:id="@+id/TvE96Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE96"
+        app:layout_constraintTop_toBottomOf="@+id/TvE48Value" />
+
+    <TextView
+        android:id="@+id/TvE192Value"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE192"
+        app:layout_constraintTop_toBottomOf="@+id/TvE96Value" />
+
+    <!--Error Values-->
+    <TextView
+        android:id="@+id/TvE3ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE3Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabels" />
+
+    <TextView
+        android:id="@+id/TvE6ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE6Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE3Value" />
+
+    <TextView
+        android:id="@+id/TvE12ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE12Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE6Value" />
+
+    <TextView
+        android:id="@+id/TvE24ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE24Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE12Value" />\
+
+    <TextView
+        android:id="@+id/TvE48ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE48Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE24Value" />
+
+    <TextView
+        android:id="@+id/TvE96ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE96Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE48Value" />
+
+    <TextView
+        android:id="@+id/TvE192ValueErr"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesValuesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE192Value"
+        app:layout_constraintTop_toBottomOf="@+id/TvE96Value" />
+
+    <!--Error %-->
+    <TextView
+        android:id="@+id/TvE3Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE3ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvLabels" />
+
+    <TextView
+        android:id="@+id/TvE6Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE6ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE3Value" />
+
+    <TextView
+        android:id="@+id/TvE12Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE12ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE6Value" />
+
+    <TextView
+        android:id="@+id/TvE24Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE24ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE12Value" />\
+
+    <TextView
+        android:id="@+id/TvE48Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE48ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE24Value" />
+
+    <TextView
+        android:id="@+id/TvE96Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE96ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE48Value" />
+
+    <TextView
+        android:id="@+id/TvE192Err"
+        android:layout_width="@dimen/SeriesWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/SeriesMarginTop"
+        android:layout_marginLeft="@dimen/SeriesErrMarginLeft"
+        app:layout_constraintStart_toEndOf="@+id/TvE192ValueErr"
+        app:layout_constraintTop_toBottomOf="@+id/TvE96Value" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
