@@ -31,8 +31,8 @@ class AmplificationSuppression : Fragment() {
         var type : Double = if(type == "VoltCurr")  20.0 else 10.0
         if(correctValues(input) && correctValues(output))
         {
-            var dimLessResult = output.text.toString().toDouble() / input.text.toString().toDouble()
-            var dbResult =  type * log10(dimLessResult)
+            var dimLessResult : Double = output.text.toString().toDouble() / input.text.toString().toDouble()
+            var dbResult : Double =  type * log10(dimLessResult)
 
             dimLess.setText(dimLessResult.toString())
             dB.setText(dbResult.toString())

@@ -12,11 +12,12 @@
         <dimen name="ContainerMainTextMarginLeft">15dp</dimen>
         <dimen name="ContainerEditMarginLeft">12dp</dimen>
         <dimen name="ContainerSpinnerMarginLeft">5dp</dimen>
-        <dimen name="SeriesValuesMarginLeft">25dp</dimen>
-        <dimen name="SeriesValuesErrMarginLeft">36dp</dimen>
-        <dimen name="SeriesErrMarginLeft">40dp</dimen>
+        <dimen name="SeriesValuesMarginLeft">5dp</dimen>
+        <dimen name="SeriesValuesErrMarginLeft">4dp</dimen>
+        <dimen name="SeriesErrMarginLeft">4dp</dimen>
 
         <dimen name="ContainerMarginHorizontal">15dp</dimen>
+        <dimen name="ContainerMarginHorizontalBigWin">8dp</dimen>
         <dimen name="ContainerMarginInBetween">15dp</dimen>
 
     <!--WidthsAndHeights-->
@@ -24,7 +25,8 @@
         <dimen name="ContainerEditTextWidth">270dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundWidth">75dp</dimen>
         <dimen name="ContainerSpinnerWidth">80dp</dimen>
-        <dimen name="SeriesWidth">55dp</dimen>
+        <dimen name="SeriesWidth">127dp</dimen>
+        <dimen name="SeriesWidthLess">55dp</dimen>
 
         <dimen name="ContainerEditTextHeight">35dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundHeight">30dp</dimen>
