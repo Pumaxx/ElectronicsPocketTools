@@ -4,19 +4,246 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DigitalFilters">
+    tools:context=".DigitalFilters"
+    android:background="@color/backgroundFragment"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <TextView
-        android:id="@+id/TvDigitalFiltersTitle"
+        android:id="@+id/TvMainTitle"
+        android:layout_width="@dimen/ContainerMainTitleWidth"
+        android:layout_height="wrap_content"
+        android:text="Finite impulse response filters parallel / series realisation"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/LlFirstFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--First filter container-->
+    <LinearLayout
+        android:id="@+id/LlFirstFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/FilterContainerHeight"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="@dimen/ContainerMarginInBetween"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlSecondFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlFirstFilterTitle"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/ContainerTitleBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
+        app:layout_constraintTop_toTopOf="@+id/LlFirstFilter" />
+
+    <TextView
+        android:id="@+id/TvFirstFilterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Digital Filters"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="40sp"
+        android:text="First filter parameters"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
+        app:layout_constraintTop_toTopOf="@+id/LlFirstFilter" />
+
+    <LinearLayout
+        android:id="@+id/LlEtBorderFirstFilter"
+        android:layout_width="@dimen/FilterEditTextWidth"
+        android:layout_height="@dimen/FilterEditTextHeight"
+        android:background="@drawable/border_edit_text"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/LlFirstFilter"
+        app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
+        app:layout_constraintTop_toBottomOf="@+id/LlFirstFilterTitle" />
+
+    <EditText
+        android:id="@+id/EtFirstParameters"
+        android:layout_width="@dimen/FilterEditTextWidth"
+        android:layout_height="@dimen/FilterEditTextHeight"
+        android:inputType="textNoSuggestions"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textColor="@color/containerTitles"
+        android:textStyle="bold"
+        android:hint="Parameters (any separator is allowed)"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="top"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlFirstFilter"
+        app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
+        app:layout_constraintTop_toBottomOf="@+id/LlFirstFilterTitle" />
+
+    <!--Second filter container-->
+    <LinearLayout
+        android:id="@+id/LlSecondFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/FilterContainerHeight"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="@dimen/ContainerMarginInBetween"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlFilterResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlSecondFilterTitle"
+        android:layout_width="205dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
+        app:layout_constraintTop_toTopOf="@+id/LlSecondFilter" />
+
+    <TextView
+        android:id="@+id/TvSecondFilterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second filter parameters"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
+        app:layout_constraintTop_toTopOf="@+id/LlSecondFilter" />
+
+    <LinearLayout
+        android:id="@+id/LlEtBorderSecondFilter"
+        android:layout_width="@dimen/FilterEditTextWidth"
+        android:layout_height="@dimen/FilterEditTextHeight"
+        android:background="@drawable/border_edit_text"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/LlSecondFilter"
+        app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
+        app:layout_constraintTop_toBottomOf="@+id/LlSecondFilterTitle" />
+
+    <EditText
+        android:id="@+id/EtSecondParameters"
+        android:layout_width="@dimen/FilterEditTextWidth"
+        android:layout_height="@dimen/FilterEditTextHeight"
+        android:inputType="textNoSuggestions"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textColor="@color/containerTitles"
+        android:textStyle="bold"
+        android:hint="Parameters (any separator is allowed)"
+        android:backgroundTint="@android:color/transparent"
+        android:gravity="top"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlSecondFilter"
+        app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
+        app:layout_constraintTop_toBottomOf="@+id/LlSecondFilterTitle" />
+
+    <!--Result container-->
+    <LinearLayout
+        android:id="@+id/LlFilterResult"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/FilterContainerHeight"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlFilterResultTitle"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
+        app:layout_constraintTop_toTopOf="@+id/LlFilterResult" />
+
+    <TextView
+        android:id="@+id/TvFilterResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Realisation result"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
+        app:layout_constraintTop_toTopOf="@+id/LlFilterResult" />
+
+    <RadioGroup
+        android:id="@+id/RgRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlFilterResult"
+        app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
+        app:layout_constraintTop_toBottomOf="@+id/LlFilterResultTitle" >
+
+        <RadioButton
+            android:id="@+id/RbParallel"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:padding="0dp"
+            android:buttonTint="@color/backgroundFragment"
+            android:text="Parallel"> </RadioButton>
+
+        <RadioButton
+            android:id="@+id/RbSeries"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:padding="0dp"
+            android:buttonTint="@color/backgroundFragment"
+            android:text="Series"> </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginTop="2dp"
+        android:backgroundTint="@color/containerResult"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="0dp"
+        android:text="Calculate"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/LlFilterResult"
+        app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
+        app:layout_constraintTop_toBottomOf="@+id/RgRadioGroup" />
+
+    <TextView
+        android:id="@+id/EtResultOutput"
+        android:layout_width="@dimen/FilterEditTextWidth"
+        android:layout_height="60dp"
+        android:text="Test"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LlFilterResult"
+        app:layout_constraintEnd_toEndOf="@+id/LlFilterResult"
+        app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

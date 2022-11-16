@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResistorRecognition">
+    tools:context=".ResistorRecognition"
+    android:background="@color/backgroundFragment">
 
     <TextView
         android:id="@+id/TvRResistorRecognitionTitle"
@@ -13,7 +14,7 @@
         android:text="Resistor Recognition"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="@color/containerResult"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
