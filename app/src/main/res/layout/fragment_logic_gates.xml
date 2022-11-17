@@ -184,7 +184,7 @@
         app:layout_constraintTop_toBottomOf="@+id/IvNand" />
 
     <Button
-        android:id="@+id/BtOrdInOne"
+        android:id="@+id/BtOrInOne"
         android:layout_width="@dimen/GateButtonWidth"
         android:layout_height="@dimen/GateButtonHeight"
         android:backgroundTint="@color/main"
@@ -205,7 +205,7 @@
         android:text="0"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/IvOr"
-        app:layout_constraintTop_toBottomOf="@+id/BtOrdInOne" />
+        app:layout_constraintTop_toBottomOf="@+id/BtOrInOne" />
 
     <Button
         android:id="@+id/BtOrInResult"
