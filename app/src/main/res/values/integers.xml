@@ -7,6 +7,7 @@
         <dimen name="ContainerMainTextMarginTopFromEditText">3dp</dimen>
         <dimen name="ContainerContentBeginMarginTop">8dp</dimen>
         <dimen name="SeriesMarginTop">23dp</dimen>
+        <dimen name="GatesMarginTop">35dp</dimen>
 
         <dimen name="ContainerTitleTextMarginLeft">12dp</dimen>
         <dimen name="ContainerMainTextMarginLeft">15dp</dimen>
@@ -15,8 +16,13 @@
         <dimen name="SeriesValuesMarginLeft">5dp</dimen>
         <dimen name="SeriesValuesErrMarginLeft">4dp</dimen>
         <dimen name="SeriesErrMarginLeft">4dp</dimen>
+        <dimen name="GatesMarginLeft">100dp</dimen>
+        <dimen name="GatesTextViewMarginLeft">20dp</dimen>
 
         <dimen name="MainTitleMarginBottom">25dp</dimen>
+
+        <dimen name="GatesMarginRight">115dp</dimen>
+        <dimen name="GatesTextViewMarginRight">30dp</dimen>
 
         <dimen name="ContainerMarginHorizontal">15dp</dimen>
         <dimen name="ContainerMarginHorizontalBigWin">8dp</dimen>
@@ -31,6 +37,8 @@
         <dimen name="SeriesWidth">127dp</dimen>
         <dimen name="SeriesWidthLess">55dp</dimen>
         <dimen name="FilterEditTextWidth">345dp</dimen>
+        <dimen name="GateHeight">85dp</dimen>
+        <dimen name="GateButtonHeight">48dp</dimen>
 
         <dimen name="ContainerEditTextHeight">35dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundHeight">30dp</dimen>
@@ -39,7 +47,8 @@
         <dimen name="FilterContainerHeight">200dp</dimen>
         <dimen name="ContainerTitleBackgroundHeight">33dp</dimen>
         <dimen name="FilterEditTextHeight">115dp</dimen>
-
+        <dimen name="GateWidth">170dp</dimen>
+        <dimen name="GateButtonWidth">40dp</dimen>
 
     <!--TextSizes-->
         <dimen name="ContainerMainTitleTextSize">25sp</dimen>

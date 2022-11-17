@@ -7,17 +7,420 @@
     tools:context=".LogicGates"
     android:background="@color/backgroundFragment">
 
-    <TextView
-        android:id="@+id/TvLogicGatesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logic Gates"
-        android:textColor="@color/containerResult"
-        android:textSize="40sp"
-        android:textStyle="bold"
+    <!--Main container-->
+    <LinearLayout
+        android:id="@+id/LlLogicGates"
+        android:layout_width="match_parent"
+        android:layout_height="775dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontalBigWin"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlLlLogicGatesIdealTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontalBigWin"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toTopOf="@+id/LlLogicGates" />
+
+    <TextView
+        android:id="@+id/TvLlLogicGatesIdealTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logic Gates Simulator"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/LlLlLogicGatesIdealTitle"
+        app:layout_constraintEnd_toEndOf="@+id/LlLlLogicGatesIdealTitle"
+        app:layout_constraintStart_toStartOf="@+id/LlLlLogicGatesIdealTitle"
+        app:layout_constraintTop_toTopOf="@+id/LlLlLogicGatesIdealTitle" />
+
+    <!--AND-->
+    <ImageView
+        android:id="@+id/IvAnd"
+        android:layout_width="160dp"
+        android:layout_height="81dp"
+        android:src="@drawable/and_gate"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="@dimen/GatesMarginRight"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/LlLlLogicGatesIdealTitle" />
+
+    <Button
+        android:id="@+id/BtAndInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvAnd"
+        app:layout_constraintEnd_toStartOf="@+id/IvAnd"
+        app:layout_constraintTop_toTopOf="@+id/IvAnd" />
+
+    <Button
+        android:id="@+id/BtAndInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvAnd"
+        app:layout_constraintTop_toBottomOf="@+id/BtAndInOne" />
+
+    <Button
+        android:id="@+id/BtAndInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvAnd"
+        app:layout_constraintStart_toEndOf="@+id/IvAnd"
+        app:layout_constraintTop_toTopOf="@+id/IvAnd" />
+
+    <TextView
+        android:id="@+id/TvAnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AND"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/GatesTextViewMarginLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/IvAnd"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toEndOf="@+id/IvAnd"
+        app:layout_constraintTop_toTopOf="@+id/IvAnd" />
+
+    <!--NAND-->
+    <ImageView
+        android:id="@+id/IvNand"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/GateHeight"
+        android:src="@drawable/nand_gate"
+        android:layout_marginTop="@dimen/GatesMarginTop"
+        android:layout_marginLeft="@dimen/GatesMarginLeft"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/IvAnd" />
+
+    <Button
+        android:id="@+id/BtNandInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNand"
+        app:layout_constraintEnd_toStartOf="@+id/IvNand"
+        app:layout_constraintTop_toTopOf="@+id/IvNand" />
+
+    <Button
+        android:id="@+id/BtNandInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvNand"
+        app:layout_constraintTop_toBottomOf="@+id/BtNandInOne" />
+
+    <Button
+        android:id="@+id/BtNandInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNand"
+        app:layout_constraintStart_toEndOf="@+id/IvNand"
+        app:layout_constraintTop_toTopOf="@+id/IvNand" />
+
+    <TextView
+        android:id="@+id/TvNand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAND"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginRight="@dimen/GatesTextViewMarginRight"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNand"
+        app:layout_constraintEnd_toStartOf="@+id/IvNand"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toTopOf="@+id/IvNand" />
+
+    <!--OR-->
+    <ImageView
+        android:id="@+id/IvOr"
+        android:layout_width="148dp"
+        android:layout_height="@dimen/GateHeight"
+        android:src="@drawable/or_gate"
+        android:layout_marginTop="@dimen/GatesMarginTop"
+        android:layout_marginRight="120dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/IvNand" />
+
+    <Button
+        android:id="@+id/BtOrdInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvOr"
+        app:layout_constraintEnd_toStartOf="@+id/IvOr"
+        app:layout_constraintTop_toTopOf="@+id/IvOr" />
+
+    <Button
+        android:id="@+id/BtOrInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvOr"
+        app:layout_constraintTop_toBottomOf="@+id/BtOrdInOne" />
+
+    <Button
+        android:id="@+id/BtOrInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvOr"
+        app:layout_constraintStart_toEndOf="@+id/IvOr"
+        app:layout_constraintTop_toTopOf="@+id/IvOr" />
+
+    <TextView
+        android:id="@+id/TvOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/GatesTextViewMarginLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/IvOr"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toEndOf="@+id/IvOr"
+        app:layout_constraintTop_toTopOf="@+id/IvOr" />
+
+    <!--NOR-->
+    <ImageView
+        android:id="@+id/IvNor"
+        android:layout_width="@dimen/GateWidth"
+        android:layout_height="@dimen/GateHeight"
+        android:src="@drawable/nor_gate"
+        android:layout_marginTop="@dimen/GatesMarginTop"
+        android:layout_marginLeft="110dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/IvOr" />
+
+    <Button
+        android:id="@+id/BtNorInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNor"
+        app:layout_constraintEnd_toStartOf="@+id/IvNor"
+        app:layout_constraintTop_toTopOf="@+id/IvNor" />
+
+    <Button
+        android:id="@+id/BtNorInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvNor"
+        app:layout_constraintTop_toBottomOf="@+id/BtNorInOne" />
+
+    <Button
+        android:id="@+id/BtNorInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNor"
+        app:layout_constraintStart_toEndOf="@+id/IvNor"
+        app:layout_constraintTop_toTopOf="@+id/IvNor" />
+
+    <TextView
+        android:id="@+id/TvNor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOR"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginRight="@dimen/GatesTextViewMarginRight"
+        app:layout_constraintBottom_toBottomOf="@+id/IvNor"
+        app:layout_constraintEnd_toStartOf="@+id/IvNor"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toTopOf="@+id/IvNor" />
+
+    <!--XOR-->
+    <ImageView
+        android:id="@+id/IvXor"
+        android:layout_width="158dp"
+        android:layout_height="@dimen/GateHeight"
+        android:src="@drawable/xor_gate"
+        android:layout_marginTop="@dimen/GatesMarginTop"
+        android:layout_marginRight="@dimen/GatesMarginRight"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/IvNor" />
+
+    <Button
+        android:id="@+id/BtXorInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXor"
+        app:layout_constraintEnd_toStartOf="@+id/IvXor"
+        app:layout_constraintTop_toTopOf="@+id/IvXor" />
+
+    <Button
+        android:id="@+id/BtXorInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvXor"
+        app:layout_constraintTop_toBottomOf="@+id/BtXorInOne" />
+
+    <Button
+        android:id="@+id/BtXorInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXor"
+        app:layout_constraintStart_toEndOf="@+id/IvXor"
+        app:layout_constraintTop_toTopOf="@+id/IvXor" />
+
+    <TextView
+        android:id="@+id/TvXor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XOR"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/GatesTextViewMarginLeft"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXor"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toEndOf="@+id/IvXor"
+        app:layout_constraintTop_toTopOf="@+id/IvXor" />
+
+    <!--XNOR-->
+    <ImageView
+        android:id="@+id/IvXnor"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/GateHeight"
+        android:src="@drawable/xnor_gate"
+        android:layout_marginTop="@dimen/GatesMarginTop"
+        android:layout_marginLeft="@dimen/GatesMarginLeft"
+        app:layout_constraintEnd_toEndOf="@+id/LlLogicGates"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toBottomOf="@+id/IvXor" />
+
+    <Button
+        android:id="@+id/BtXnorInOne"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:layout_marginBottom="50dp"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXnor"
+        app:layout_constraintEnd_toStartOf="@+id/IvXnor"
+        app:layout_constraintTop_toTopOf="@+id/IvXnor" />
+
+    <Button
+        android:id="@+id/BtXnorInTwo"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/main"
+        android:padding="0dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/IvXnor"
+        app:layout_constraintTop_toBottomOf="@+id/BtXnorInOne" />
+
+    <Button
+        android:id="@+id/BtXnorInResult"
+        android:layout_width="@dimen/GateButtonWidth"
+        android:layout_height="@dimen/GateButtonHeight"
+        android:backgroundTint="@color/containerResult"
+        android:padding="0dp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXnor"
+        app:layout_constraintStart_toEndOf="@+id/IvXnor"
+        app:layout_constraintTop_toTopOf="@+id/IvXnor" />
+
+    <TextView
+        android:id="@+id/TvXnor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XNOR"
+        android:textColor="@color/backgroundFragment"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginRight="@dimen/GatesTextViewMarginRight"
+        app:layout_constraintBottom_toBottomOf="@+id/IvXnor"
+        app:layout_constraintEnd_toStartOf="@+id/IvXnor"
+        app:layout_constraintStart_toStartOf="@+id/LlLogicGates"
+        app:layout_constraintTop_toTopOf="@+id/IvXnor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
