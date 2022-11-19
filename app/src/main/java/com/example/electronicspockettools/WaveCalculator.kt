@@ -1,6 +1,5 @@
 package com.example.electronicspockettools
 
-import android.icu.number.Precision
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,9 +10,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.Spinner
-import android.widget.Toast
-import androidx.core.view.isNotEmpty
-import java.math.BigDecimal
 import kotlin.math.pow
 
 class WaveCalculator : Fragment() {

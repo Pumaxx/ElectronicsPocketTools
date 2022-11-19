@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DigitalFilters"
     android:background="@color/backgroundFragment"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context=".DigitalFilters">
 
     <TextView
         android:id="@+id/TvMainTitle"
         android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
         android:text="Finite impulse response filters parallel / series realisation"
         android:textColor="@color/containerMainText"
         android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/LlFirstFilter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -51,12 +51,12 @@
         android:id="@+id/TvFirstFilterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
         android:text="First filter parameters"
         android:textColor="@color/containerTitles"
         android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
-        android:layout_marginLeft="8dp"
         app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
         app:layout_constraintTop_toTopOf="@+id/LlFirstFilter" />
 
@@ -64,8 +64,8 @@
         android:id="@+id/LlEtBorderFirstFilter"
         android:layout_width="@dimen/FilterEditTextWidth"
         android:layout_height="@dimen/FilterEditTextHeight"
-        android:background="@drawable/border_edit_text"
         android:layout_marginTop="20dp"
+        android:background="@drawable/border_edit_text"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/LlFirstFilter"
         app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
@@ -75,15 +75,15 @@
         android:id="@+id/EtFirstParameters"
         android:layout_width="@dimen/FilterEditTextWidth"
         android:layout_height="@dimen/FilterEditTextHeight"
-        android:inputType="textNoSuggestions"
-        android:textSize="@dimen/ContainerTitleTextSize"
-        android:textColor="@color/containerTitles"
-        android:textStyle="bold"
-        android:hint="Parameters (any separator is allowed)"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@android:color/transparent"
         android:gravity="top"
+        android:hint="Parameters (any separator is allowed)"
+        android:inputType="textNoSuggestions"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/LlFirstFilter"
         app:layout_constraintStart_toStartOf="@+id/LlFirstFilter"
         app:layout_constraintTop_toBottomOf="@+id/LlFirstFilterTitle" />
@@ -116,12 +116,12 @@
         android:id="@+id/TvSecondFilterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
         android:text="Second filter parameters"
         android:textColor="@color/containerTitles"
         android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
-        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
         app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
         app:layout_constraintTop_toTopOf="@+id/LlSecondFilter" />
 
@@ -129,8 +129,8 @@
         android:id="@+id/LlEtBorderSecondFilter"
         android:layout_width="@dimen/FilterEditTextWidth"
         android:layout_height="@dimen/FilterEditTextHeight"
-        android:background="@drawable/border_edit_text"
         android:layout_marginTop="20dp"
+        android:background="@drawable/border_edit_text"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="@+id/LlSecondFilter"
         app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
@@ -140,15 +140,15 @@
         android:id="@+id/EtSecondParameters"
         android:layout_width="@dimen/FilterEditTextWidth"
         android:layout_height="@dimen/FilterEditTextHeight"
-        android:inputType="textNoSuggestions"
-        android:textSize="@dimen/ContainerTitleTextSize"
-        android:textColor="@color/containerTitles"
-        android:textStyle="bold"
-        android:hint="Parameters (any separator is allowed)"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@android:color/transparent"
         android:gravity="top"
+        android:hint="Parameters (any separator is allowed)"
+        android:inputType="textNoSuggestions"
         android:padding="10dp"
-        android:layout_marginTop="20dp"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/LlSecondFilter"
         app:layout_constraintStart_toStartOf="@+id/LlSecondFilter"
         app:layout_constraintTop_toBottomOf="@+id/LlSecondFilterTitle" />
@@ -157,7 +157,7 @@
     <LinearLayout
         android:id="@+id/LlFilterResult"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/FilterContainerHeight"
+        android:layout_height="220dp"
         android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
         android:layout_marginBottom="25dp"
         android:background="@drawable/container"
@@ -181,12 +181,12 @@
         android:id="@+id/TvFilterResultTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
         android:text="Realisation result"
         android:textColor="@color/containerTitles"
         android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
-        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
-        android:layout_marginLeft="@dimen/ContainerTitleTextMarginLeft"
         app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
         app:layout_constraintTop_toTopOf="@+id/LlFilterResult" />
 
@@ -194,32 +194,33 @@
         android:id="@+id/RgRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="10dp"
+        android:checkedButton="@+id/RbParallel"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/LlFilterResult"
         app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
-        app:layout_constraintTop_toBottomOf="@+id/LlFilterResultTitle" >
+        app:layout_constraintTop_toBottomOf="@+id/LlFilterResultTitle">
 
         <RadioButton
             android:id="@+id/RbParallel"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:padding="0dp"
             android:buttonTint="@color/backgroundFragment"
-            android:text="Parallel"> </RadioButton>
+            android:padding="0dp"
+            android:text="Parallel"></RadioButton>
 
         <RadioButton
             android:id="@+id/RbSeries"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
-            android:padding="0dp"
             android:buttonTint="@color/backgroundFragment"
-            android:text="Series"> </RadioButton>
+            android:padding="0dp"
+            android:text="Series"></RadioButton>
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/BtCalculateFilter"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginTop="2dp"
@@ -233,17 +234,18 @@
         app:layout_constraintTop_toBottomOf="@+id/RgRadioGroup" />
 
     <TextView
-        android:id="@+id/EtResultOutput"
+        android:id="@+id/TvResultOutput"
         android:layout_width="@dimen/FilterEditTextWidth"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="5dp"
         android:text="Test"
         android:textColor="@color/containerTitles"
         android:textSize="@dimen/ContainerTitleTextSize"
         android:textStyle="bold"
-        android:layout_marginBottom="5dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/LlFilterResult"
         app:layout_constraintEnd_toEndOf="@+id/LlFilterResult"
         app:layout_constraintStart_toStartOf="@+id/LlFilterResult"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/BtCalculateFilter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
