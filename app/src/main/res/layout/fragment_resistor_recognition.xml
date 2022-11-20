@@ -10,16 +10,670 @@
     tools:context=".ResistorRecognition">
 
     <TextView
-        android:id="@+id/TvRResistorRecognitionTitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/TvMainTitle"
+        android:layout_width="@dimen/ContainerMainTitleWidth"
         android:layout_height="wrap_content"
-        android:text="Resistor Recognition"
-        android:textSize="40sp"
+        android:layout_marginBottom="90dp"
+        android:gravity="center"
+        android:text="Resistor recognition"
+        android:textColor="@color/containerMainText"
+        android:textSize="@dimen/ContainerMainTitleTextSize"
         android:textStyle="bold"
-        android:textColor="@color/containerResult"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/LlRecByColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Resistor image container-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ClResistorImageContainer"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TvMainTitle">
+
+            <ImageView
+                android:id="@+id/IvResistor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/resistor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/LlFirstStripe"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:orientation="vertical"
+                android:layout_marginRight="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/LlSecondStripe"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:orientation="vertical"
+                android:layout_marginRight="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/LlThirdStripe"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/LlFourthStripe"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="@color/brown"
+                android:orientation="vertical"
+                android:layout_marginLeft="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        
+    </androidx.constraintlayout.widget.ConstraintLayout> <!--Resistor image container-->
+
+    <TextView
+        android:id="@+id/TvResistorResult"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0Ω  ±1%"
+        android:textColor="@color/containerResult"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LlRecByColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ClResistorImageContainer" />
+
+    <!--Resistor by color-->
+    <LinearLayout
+        android:id="@+id/LlRecByColor"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toTopOf="@+id/LlRecByValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlRecByColorTitle"
+        android:layout_width="210dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByColor"
+        app:layout_constraintTop_toTopOf="@+id/LlRecByColor" />
+
+    <TextView
+        android:id="@+id/TvRecByColorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recognition by color code"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByColor"
+        app:layout_constraintTop_toTopOf="@+id/LlRecByColor" />
+
+    <!--Button container-->
+    <LinearLayout
+        android:id="@+id/LlButtonContainer"
+        android:layout_width="348dp"
+        android:layout_height="@dimen/ResistorButtonsHeight"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/LlRecByColor"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByColor"
+        app:layout_constraintTop_toBottomOf="@+id/LlRecByColorTitle">
+
+        <!--First value-->
+        <LinearLayout
+            android:id="@+id/LlFirstValue"
+            android:layout_width="@dimen/ResistorButtonsWidth"
+            android:layout_height="@dimen/ResistorButtonsHeight"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueZero"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueOne"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/brown" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueTwo"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueThree"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/orange" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueFour"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="4"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/yellow" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueFive"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueSix"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueSeven"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/purple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueEight"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/grey" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtFirstValueNine"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="9"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/white" />
+
+        </LinearLayout> <!--First value-->
+
+        <!--Second value-->
+        <LinearLayout
+            android:id="@+id/LlSecondValue"
+            android:layout_width="@dimen/ResistorButtonsWidth"
+            android:layout_height="@dimen/ResistorButtonsHeight"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueZero"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueOne"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/brown" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueTwo"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueThree"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/orange" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueFour"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="4"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/yellow" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueFive"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueSix"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueSeven"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/purple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueEight"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/grey" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtSecondValueNine"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="9"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/white" />
+
+        </LinearLayout> <!--Second value-->
+
+        <!--Multiply value-->
+        <LinearLayout
+            android:id="@+id/LlMultiplyValue"
+            android:layout_width="@dimen/ResistorButtonsWidth"
+            android:layout_height="@dimen/ResistorButtonsHeight"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1 Ω"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyTenOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="10 Ω"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/brown" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneHundredOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="100 Ω"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneKiloOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1k Ω"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/orange" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyTenKiloOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="10 kΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/yellow" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneHundredKiloOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="100 kΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneMegaOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1 MΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyTenMegaOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="10 MΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/purple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneHundredMegaOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="100 MΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/grey" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtMultiplyOneGigaOhm"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="1 GΩ"
+                android:textAllCaps="false"
+                android:textColor="@color/grey"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/white" />
+
+        </LinearLayout> <!--Multiply value-->
+
+        <!--Tolerance value-->
+        <LinearLayout
+            android:id="@+id/LlToleranceValue"
+            android:layout_width="@dimen/ResistorButtonsWidth"
+            android:layout_height="@dimen/ResistorButtonsHeight"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceBlankOne"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:enabled="false"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceOnePer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 1%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/brown" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceTwoPer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 2%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceBlankTwo"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:enabled="false"
+                android:background="@color/orange" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceBlankThree"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:enabled="false"
+                android:background="@color/yellow" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtTolerancePointFivePer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 0.5%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtTolerancePointTwentyFivePer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 0.25%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtTolerancePointTenPer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 0.10%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@color/purple" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceFivePer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 5%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@drawable/gold_gradient" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtToleranceTenPer"
+                android:layout_width="@dimen/ResistorButtonsWidth"
+                android:layout_height="@dimen/ResistorActualButtonsHeight"
+                android:text="± 10%"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="0dp"
+                android:background="@drawable/silver_gradient" />
+
+        </LinearLayout> <!--Tolerance value-->
+
+    </LinearLayout> <!--Button container-->
+
+    <!--Resistor by value-->
+    <LinearLayout
+        android:id="@+id/LlRecByValue"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginHorizontal="@dimen/ContainerMarginHorizontal"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/container"
+        android:orientation="vertical"
+        android:padding="@dimen/ContainerPadding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/LlRecByValueTitle"
+        android:layout_width="210dp"
+        android:layout_height="@dimen/ContainerTitleSmallBackgroundHeight"
+        android:layout_marginTop="@dimen/ContainerTitleBackgroundMarginTop"
+        android:background="@drawable/container_title"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByValue"
+        app:layout_constraintTop_toTopOf="@+id/LlRecByValue" />
+
+    <TextView
+        android:id="@+id/TvRecByValueTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recognition by input value"
+        android:textColor="@color/containerTitles"
+        android:textSize="@dimen/ContainerTitleTextSize"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/ContainerTitleTextMarginTop"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByValue"
+        app:layout_constraintTop_toTopOf="@+id/LlRecByValue" />
+
+    <TextView
+        android:id="@+id/TvResistanceInputTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input"
+        android:textColor="@color/containerMainText"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/ContainerMainTextMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByValue"
+        app:layout_constraintTop_toBottomOf="@+id/LlRecByValueTitle" />
+
+    <EditText
+        android:id="@+id/EtResistanceInput"
+        android:layout_width="@dimen/ContainerEditTextWidth"
+        android:layout_height="@dimen/ContainerEditTextHeight"
+        android:textStyle="bold"
+        android:textSize="@dimen/ContainerMainTextSize"
+        android:textColor="@color/containerMainInput"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="@dimen/ContainerEditMarginLeft"
+        app:layout_constraintStart_toStartOf="@+id/LlRecByValue"
+        app:layout_constraintTop_toBottomOf="@+id/TvResistanceInputTitle" />
+
+    <Spinner
+        android:id="@+id/SpLfeLength"
+        android:entries="@array/resistances"
+        android:spinnerMode="dialog"
+        android:layout_width="@dimen/ContainerSpinnerWidth"
+        android:layout_height="@dimen/ContainerSpinnerHeight"
+        android:layout_marginLeft="@dimen/ContainerSpinnerMarginLeft"
+        android:background="@android:drawable/btn_dropdown"
+        android:padding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/EtResistanceInput"
+        app:layout_constraintTop_toBottomOf="@+id/TvResistanceInputTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

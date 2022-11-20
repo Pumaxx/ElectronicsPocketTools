@@ -39,6 +39,7 @@
         <dimen name="FilterEditTextWidth">345dp</dimen>
         <dimen name="GateHeight">85dp</dimen>
         <dimen name="GateButtonHeight">48dp</dimen>
+        <dimen name="ResistorButtonsWidth">87dp</dimen>
 
         <dimen name="ContainerEditTextHeight">35dp</dimen>
         <dimen name="ContainerTitleSmallBackgroundHeight">30dp</dimen>
@@ -49,6 +50,8 @@
         <dimen name="FilterEditTextHeight">115dp</dimen>
         <dimen name="GateWidth">170dp</dimen>
         <dimen name="GateButtonWidth">40dp</dimen>
+        <dimen name="ResistorButtonsHeight">410dp</dimen>
+        <dimen name="ResistorActualButtonsHeight">41dp</dimen>
 
     <!--TextSizes-->
         <dimen name="ContainerMainTitleTextSize">25sp</dimen>

@@ -44,4 +44,11 @@
         <item>s</item>
     </string-array>
 
+    <string-array name="resistances">
+        <item>Ω</item>
+        <item>kΩ</item>
+        <item>MΩ</item>
+        <item>GΩ</item>
+    </string-array>
+
 </resources>
