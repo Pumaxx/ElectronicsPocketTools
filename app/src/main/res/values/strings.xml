@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ElectronicsPocketTools</string>
+    <string name="parameters_hint">Parameters (dot for decimal separation, for numbers other allowed)</string>
 
     <string-array name="lengths">
         <item>nm</item>

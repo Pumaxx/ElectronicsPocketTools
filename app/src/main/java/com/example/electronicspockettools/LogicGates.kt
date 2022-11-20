@@ -56,13 +56,13 @@ class LogicGates : Fragment() {
     {
         setOppositeValue(button)
 
-        if(BtNandInOne.text.toString() == "0" && BtNandInTwo.text.toString() == "0")
+        if(BtNandInOne.text.toString() == "1" && BtNandInTwo.text.toString() == "1")
         {
-            BtNandInResult.text = "1"
+            BtNandInResult.text = "0"
         }
         else
         {
-            BtNandInResult.text = "0"
+            BtNandInResult.text = "1"
         }
     }
 
