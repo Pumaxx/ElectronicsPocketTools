@@ -207,7 +207,7 @@ class DigitalFilters : Fragment() {
         RgRadioGroup = view.findViewById(R.id.RgRadioGroup)
         BtCalculateFilter = view.findViewById(R.id.BtCalculateFilter)
 
-        RgRadioGroup.setOnCheckedChangeListener { radioGroup, checkedId ->
+        RgRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             run {
                    var radioButton : RadioButton = view.findViewById(checkedId)
 

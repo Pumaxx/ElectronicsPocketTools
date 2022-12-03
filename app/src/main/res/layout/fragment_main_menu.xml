@@ -21,87 +21,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtResistorRecognition"
         android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_height="160dp"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/buttonColor"
-        android:text="Resistor"
+        android:background="@drawable/button_gradient"
+        android:text="Resistor Recognition"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TvMainTitle" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtWaveCalculator"
         android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_height="160dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/buttonColor"
-        android:text="Wave"
+        android:background="@drawable/button_gradient"
+        android:text="Wave Parameters Calculator"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TvMainTitle" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtLogicGates"
         android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="Gate"
+        android:layout_height="160dp"
+        android:text="Logic Gates Simulator"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_gradient"
         app:layout_constraintBottom_toTopOf="@+id/BtPreferredValues"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BtResistorRecognition" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtDigitalFilters"
         android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="Filter"
+        android:layout_height="160dp"
+        android:text="Digital Filters Realisation"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_gradient"
         app:layout_constraintBottom_toTopOf="@+id/BtAmplificationSuppression"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BtWaveCalculator" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtPreferredValues"
         android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="Values"
+        android:layout_height="160dp"
+        android:text="Preferred Values    E series"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:layout_marginBottom="100dp"
         android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BtAmplificationSuppression"
         android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:text="AmpSupp"
+        android:layout_height="160dp"
+        android:text="Amplification Suppression"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:textStyle="bold"
         android:layout_marginBottom="100dp"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/buttonColor"
+        android:background="@drawable/button_gradient"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

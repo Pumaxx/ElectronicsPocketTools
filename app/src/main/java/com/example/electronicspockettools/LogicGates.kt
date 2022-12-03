@@ -34,6 +34,11 @@ class LogicGates : Fragment() {
     private fun setOppositeValue(button: Button)
     {
         button.text = if(button.text.toString() == "0") { "1" } else { "0" }
+    }
+
+    private fun andGateResult(button: Button)
+    {
+        setOppositeValue(button)
 
         if(BtAndInOne.text.toString() == "1" && BtAndInTwo.text.toString() == "1")
         {
@@ -43,13 +48,6 @@ class LogicGates : Fragment() {
         {
             BtAndInResult.text = "0"
         }
-    }
-
-    private fun andGateResult(button: Button)
-    {
-        setOppositeValue(button)
-
-
     }
 
     private fun nandGateResult(button: Button)
